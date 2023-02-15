@@ -1,5 +1,8 @@
 import 'package:chat_app_class/components/main_btn.dart';
+import 'package:chat_app_class/pref/shared_pref_controller.dart';
+import 'package:chat_app_class/screens/chat_screen.dart';
 import 'package:chat_app_class/screens/login_screen.dart';
+import 'package:chat_app_class/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -25,6 +28,10 @@ class _WelcomeScreenState extends State<WelcomeScreen>
       print(animation.value);
     });
 
+    if(SharedPrefController().loggedIn){
+      Navigator.pushReplacementNamed(context, ChatScreen.id);
+    }
+
     super.initState();
   }
 
@@ -49,7 +56,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 Hero(
                   tag: 'logo',
                   child: Container(
-                    child: Image.asset('images/logo.png'),
+                    child: Image.asset('assets/images/logo.png'),
                     height: controller.value * 100,
                   ),
                 ),
@@ -75,7 +82,9 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             MainBtn(
               color: Colors.blueAccent,
               text: 'Register',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, RegistrationScreen.id);
+              },
             ),
           ],
         ),
