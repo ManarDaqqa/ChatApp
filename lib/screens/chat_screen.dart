@@ -1,3 +1,4 @@
+import 'package:chat_app_class/encryption/encryption.dart';
 import 'package:chat_app_class/pref/shared_pref_controller.dart';
 import 'package:chat_app_class/screens/notifications_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -16,25 +17,25 @@ String username = 'User';
 String messageText = '';
 
 class ChatScreen extends StatefulWidget {
-  static const id = 'ChatScreen';
 
+  static const id = 'ChatScreen';
   @override
   _ChatScreenState createState() => _ChatScreenState();
 }
 
 class _ChatScreenState extends State<ChatScreen> {
   final chatMsgTextController = TextEditingController();
+
   String? _userImage;
   List<RemoteNotification?> notifications = [];
 
   _sendMessage() async {
-    //FocusScope.of(context).unfocus();
     chatMsgTextController.clear();
     FbFirestoreController().instance.collection('messages').add({
       'userId': loggedInUser.uid,
       'username': loggedInUser.displayName,
       'SenderEmail': loggedInUser.email,
-      'text': messageText,
+      'text': Encryption.encryptAES(messageText),
       'time': Timestamp.now()
     });
     // print(userData.asStream()[document]);
@@ -236,7 +237,7 @@ class ChatStream extends StatelessWidget {
             final key = message.id;
 
             final msgBubble = MessageBubble(
-              msgText: msgText,
+              msgText: Encryption.decryptAES(msgText),
               msgSender: msgSender,
               user: currentUser == userId,
               key: ValueKey(key),
@@ -264,7 +265,7 @@ class ChatStream extends StatelessWidget {
 
 class MessageBubble extends StatelessWidget {
   final Key key;
-  final String msgText;
+  String msgText;
   final String msgSender;
   final String emailSender;
   final bool user;
@@ -304,7 +305,7 @@ class MessageBubble extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
               child: Text(
-                msgText,
+                '${msgText}',
                 style: TextStyle(
                   color: !user ? Colors.white : Colors.blue,
                   fontFamily: 'Poppins',

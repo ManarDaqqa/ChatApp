@@ -50,13 +50,13 @@ class FbAuthController with Helpers{
           email: email,
           password: password
       );
-      if (userCredential.user != null ){
-        if(userCredential.user!.emailVerified){
-          return true;
-        }
-        showSnackBar(context, message: 'Email must be verified!',error: true);
-        await _firebaseAuth.signOut();
-      }
+      // if (userCredential.user != null ){
+      //   if(userCredential.user!.emailVerified){
+      //     return true;
+      //   }
+      //   showSnackBar(context, message: 'Email must be verified!',error: true);
+      //   await _firebaseAuth.signOut();
+      // }
       return false;
     } on FirebaseAuthException catch (exception) {
       controlAuthException(context, authException: exception);
