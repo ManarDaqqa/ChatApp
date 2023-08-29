@@ -2,7 +2,7 @@
 
 <div>
     <p align="center">
-    <img width="400" height="200" src="https://raw.githubusercontent.com/ManarDaqqa/ChatApp/main/assets/images/image1.jpeg">
+    <img width="500" height="200" src="https://raw.githubusercontent.com/ManarDaqqa/ChatApp/main/assets/images/image1.jpeg">
     <img src="https://raw.githubusercontent.com/ManarDaqqa/ChatApp/main/assets/images/image2.jpeg">
     <img src="https://raw.githubusercontent.com/ManarDaqqa/ChatApp/main/assets/images/image3.jpeg">
     <img src="https://raw.githubusercontent.com/ManarDaqqa/ChatApp/main/assets/images/image4.jpeg">
