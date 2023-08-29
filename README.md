@@ -1,7 +1,7 @@
 # chat_app_class
 
 <div>
-    <p>
+    <p align="center", width="100%">
     <img src="https://raw.githubusercontent.com/ManarDaqqa/ChatApp/main/assets/images/image1.jpeg">
     <img src="https://raw.githubusercontent.com/ManarDaqqa/ChatApp/main/assets/images/image2.jpeg">
     <img src="https://raw.githubusercontent.com/ManarDaqqa/ChatApp/main/assets/images/image3.jpeg">
