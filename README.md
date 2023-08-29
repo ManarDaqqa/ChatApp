@@ -1,7 +1,7 @@
 # chat_app_class
 
 
-<img align="left" width="100" height="100" src="https://raw.githubusercontent.com/ManarDaqqa/ChatApp/main/assets/images/image1.jpeg">
+<img align="left" src="https://raw.githubusercontent.com/ManarDaqqa/ChatApp/main/assets/images/image1.jpeg">
 
 A new Flutter project.
 
