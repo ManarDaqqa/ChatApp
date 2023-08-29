@@ -1,13 +1,14 @@
 # chat_app_class
 
-<p>
+<div>
+    <p>
     <img src="https://raw.githubusercontent.com/ManarDaqqa/ChatApp/main/assets/images/image1.jpeg">
     <img src="https://raw.githubusercontent.com/ManarDaqqa/ChatApp/main/assets/images/image2.jpeg">
     <img src="https://raw.githubusercontent.com/ManarDaqqa/ChatApp/main/assets/images/image3.jpeg">
     <img src="https://raw.githubusercontent.com/ManarDaqqa/ChatApp/main/assets/images/image4.jpeg">
     <img src="https://raw.githubusercontent.com/ManarDaqqa/ChatApp/main/assets/images/image5.jpeg">
-
-</p>
+    </p>
+</div>
 
 A new Flutter project.
 
